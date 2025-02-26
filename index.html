@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Day Fest</title>
+    <!-- Add icon library -->
+    <style>
+	/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #f4f7f6;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #00bcd4, #ff4081);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #fff;
+    color: #007bff;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #007bff;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #ff4081;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+.menu {
+    display: block;
+}
+
+/* Section Title */
+h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+/* Stall Section */
+.stalls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 20px;
+}
+
+.stall {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stall:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.stall img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+.stall h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.stall p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.stall button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.stall button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff4081;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stalls {
+        justify-content: center;
+    }
+
+    .stall {
+        max-width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero button {
+        font-size: 1rem;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 10px 5px;
+        font-size: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+        text-align: right;
+        font-size: 1.8rem;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #007bff;
+        padding: 20px;
+        width: 60%;
+        height: 100vh;
+        z-index: 100;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .stall h3 {
+        font-size: 1.2rem;
+    }
+
+    .stall p {
+        font-size: 0.9rem;
+    }
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to RD National College Science Day Fest! 🔬✨</h1>
+        <p>Join us for an exciting journey through science, technology, and innovation!</p>
+        <button id="speakButton">Click to Hear Guide</button>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#stalls">Stalls</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About the Fest</h2>
+        <p><center>Explore the amazing world of science at RD National College's Science Day Fest! From robotics to chemistry magic, astronomy to environmental awareness, there’s something for everyone.</center></p>
+    </section>
+
+    <!-- Stalls Section -->
+    <section id="stalls" class="stalls">
+        <h2>Event Stalls</h2>
+        <div class="stall">
+            <img src="https://www.unite.ai/wp-content/uploads/2024/06/AI-and-Robotics.webp" alt="Robotics Workshop">
+            <h3>Robotics Workshop 🤖</h3>
+            <p>Explore automation, AI, and robotics technologies at this hands-on workshop!</p>
+            <button onclick="speakText('Welcome to the Robotics Workshop! Dive into automation and robotics technologies.')">Click to Hear More</button>
+        </div>
+
+        <div class="stall">
+            <img src="https://img.freepik.com/premium-photo/mystical-alchemists-workshop-with-potions-magical-ingredients_1282444-98269.jpg" alt="Chemistry Magic">
+            <h3>Chemistry Magic 🧪</h3>
+            <p>Experience thrilling chemistry experiments and the magic behind scientific reactions!</p>
+            <button onclick="speakText('Welcome to Chemistry Magic! Witness fascinating chemistry experiments.')">Click to Hear More</button>
+        </div>
+
+        <div class="stall">
+            <img src="https://images.stockcake.com/public/d/7/1/d71f90c8-4e85-45a2-ba9b-0c5a1cc21dfd_large/future-space-explorer-stockcake.jpg" alt="Astronomy Exploration">
+            <h3>Astronomy Exploration 🌌</h3>
+            <p>Discover the wonders of the universe with interactive presentations and telescopes!</p>
+            <button onclick="speakText('Explore the Astronomy Exploration stall and learn about the cosmos.')">Click to Hear More</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 RD National College. All Rights Reserved.</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+    let currentSpeech = null;
+
+    function speakText(text) {
+        if (currentSpeech) {
+            window.speechSynthesis.cancel();
+        }
+
+        const voices = window.speechSynthesis.getVoices();
+        currentSpeech = new SpeechSynthesisUtterance(text);
+
+        currentSpeech.lang = "en-US";  // You can use "en-GB" for British English if preferred
+        currentSpeech.rate = 1.1;  // Speed up the voice slightly for a more natural flow
+        currentSpeech.pitch = 1;  // Standard pitch, adjust if you need deeper or lighter tone
+
+        // Choose a male voice: "Google US English" or other available male voices in the browser
+        const preferredVoice = voices.find(voice => voice.name === "Google US English Male") 
+                               || voices.find(voice => voice.name === "Google UK English Male") 
+                               || voices.find(voice => voice.name.toLowerCase().includes("male")) 
+                               || voices[0];  // Default to first available voice
+
+        currentSpeech.voice = preferredVoice;
+
+        window.speechSynthesis.speak(currentSpeech);
+    }
+
+    window.onload = function () {
+        setTimeout(() => {
+            speakText("Welcome to R.D National College Science Day Fest! Explore exciting exhibits, workshops, and projects from various science departments.");
+        }, 1000);
+    };
+
+    document.getElementById("speakButton").addEventListener("click", function () {
+        speakText("Welcome to our Science Day fest! Have fun exploring.");
+    });
+</script>
+
+
+</body>
+</html>
